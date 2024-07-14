@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:45:55 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/13 04:07:53 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/13 20:59:32 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		empty_line(char *line);
 int		search_string(char *str, char *set);
 int		count_splits(char **splits);
+void	print_splits(char **splits);
+void	ft_replace(char *str, char old, char new);
+int		isdigit_str(char *str);
 
 //Bonus
 typedef struct s_list

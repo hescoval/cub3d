@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 04:58:36 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/13 04:28:29 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/14 03:00:39 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,7 @@
 # include <string.h>
 # include <unistd.h>
 # include "../libft/libft.h"
-
-# define X 0
-# define Y 1
-# define XY 2
-# define RGB 3
-# define R 0
-# define G 1
-# define B 2
-# define PI 3.14159265358979323846
+# include "defines.h"
 
 typedef struct s_parsehelp
 {
@@ -87,8 +79,6 @@ typedef struct s_map
 	char		*south;
 	char		*east;
 	char		*west;
-	int			floor[RGB];
-	int			ceiling[RGB];
 	char		**f_map;
 	int			p_position[XY];
 	char		p_direction;
@@ -181,5 +171,8 @@ void	increment_ph(t_parsehelp *ph, char *line);
 void	check_valid_format(t_data *data, int i);
 void	increment_ph_fetch(t_data *data, t_parsehelp *ph, char *line);
 void	check_map_files(t_data *data);
+void	validate_map_info(t_data *data, char **map);
+void	check_rgb(t_data *data);
+void	set_rgb_values(char **values, t_data *data, int *rgb);
 
 #endif

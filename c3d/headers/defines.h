@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 05:11:45 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 03:06:29 by hescoval         ###   ########.fr       */
+/*   Created: 2024/07/14 03:00:16 by hescoval          #+#    #+#             */
+/*   Updated: 2024/07/14 03:15:15 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/c3d.h"
+#ifndef DEFINES_H
+# define DEFINES_H
 
-int	main(int ac, char **av)
-{
-	t_data	*data;
+# define X 0
+# define Y 1
+# define XY 2
+# define PI 3.14159265358979323846
 
-	if (ac != 2)
-		exit_program("Wrong number of arguments", NULL);
-	init_data(&data, av[1]);
-	parsing_stuff(data);
-	exit_program(NULL, data);
-}
+#endif

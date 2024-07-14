@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_splits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 05:11:45 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 03:06:29 by hescoval         ###   ########.fr       */
+/*   Created: 2024/07/13 20:46:42 by hescoval          #+#    #+#             */
+/*   Updated: 2024/07/14 00:45:15 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/c3d.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	print_splits(char **splits)
 {
-	t_data	*data;
+	int	i;
 
-	if (ac != 2)
-		exit_program("Wrong number of arguments", NULL);
-	init_data(&data, av[1]);
-	parsing_stuff(data);
-	exit_program(NULL, data);
+	if (!splits)
+		return ;
+	i = 0;
+	while (splits[i])
+	{
+		ft_putendl_fd(splits[i], 1);
+		i++;
+	}
 }

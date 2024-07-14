@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 07:28:13 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/13 04:13:14 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/14 02:47:32 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,6 @@ void	parsing_stuff(t_data *data)
 	check_valid_format(data, 0);
 	extract_map(data, 0);
 	check_map_files(data);
+	check_rgb(data);
+	validate_map_info(data, data->map->f_map);
 }

@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   isdigit_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 05:11:45 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 03:06:29 by hescoval         ###   ########.fr       */
+/*   Created: 2024/07/13 20:59:07 by hescoval          #+#    #+#             */
+/*   Updated: 2024/07/13 20:59:26 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/c3d.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+int	isdigit_str(char *str)
 {
-	t_data	*data;
-
-	if (ac != 2)
-		exit_program("Wrong number of arguments", NULL);
-	init_data(&data, av[1]);
-	parsing_stuff(data);
-	exit_program(NULL, data);
+	if (!str)
+		return (0);
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
 }

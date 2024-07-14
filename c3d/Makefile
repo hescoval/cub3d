@@ -11,7 +11,7 @@ OBJ_DIR = objs
 
 NAME = cub3d
 _FILES = main.c safe_exit.c init_stuff.c free_stuff.c parse_central.c struct_stuff.c \
-			path_error_checking.c
+			info_error_check.c map_validation.c
 OBJS = $(_FILES:%.c=%.o)
 TARGET = $(addprefix $(OBJ_DIR)/, $(OBJS))
 
@@ -91,7 +91,7 @@ re: fclean all
 .PHONY: all clean fclean re
 
 norm:
-	norminette -R CheckForbiddenSourceHeader headers/c3d.h srcs libft
+	norminette -R CheckForbiddenSourceHeader headers srcs libft
 
 leak: all
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) maps/valid/map.cub

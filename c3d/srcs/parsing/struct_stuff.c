@@ -6,11 +6,34 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 01:22:37 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/13 04:28:45 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/14 03:15:03 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/c3d.h"
+
+void	set_rgb_values(char **values, t_data *data, int *set_value)
+{
+	int	i;
+	int	value;
+	int	byte_value;
+
+	i = 1;
+	while (values[i])
+	{
+		value = ft_atoi(values[i]);
+		if (value < 0 || value > 255)
+		{
+			free_splits(values);
+			exit_program("Invalid RGB values", data);
+		}
+		byte_value += value;
+		if (i < 2)
+			byte_value = byte_value << 8;
+		i++;
+	}
+	*set_value = byte_value;
+}
 
 static void	inc_dup(int *change, char **line, char *new_line)
 {
