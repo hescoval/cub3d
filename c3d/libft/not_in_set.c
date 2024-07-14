@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   not_in_set.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 15:45:27 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 06:11:30 by hescoval         ###   ########.fr       */
+/*   Created: 2024/07/14 04:05:22 by hescoval          #+#    #+#             */
+/*   Updated: 2024/07/14 04:06:03 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_in_set(char c, char const *set)
+int	not_in_set(char *set, char c)
 {
-	while (*set)
+	int	i;
+
+	i = 0;
+	while (set[i])
 	{
-		if (c == *set)
-			return (1);
-		set++;
+		if (c == set[i])
+			return (0);
+		i++;
 	}
-	return (0);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	char	*trim;
-	int		s1_len;
-
-	while (ft_in_set(*s1, set))
-		s1++;
-	s1_len = ft_strlen(s1);
-	if (s1_len - 1 < 0)
-		return (ft_strdup(""));
-	while (ft_in_set(s1[s1_len - 1], set))
-		s1_len--;
-	trim = ft_substr(s1, 0, s1_len);
-	return (trim);
+	return (1);
 }

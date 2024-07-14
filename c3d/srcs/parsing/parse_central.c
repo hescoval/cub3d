@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 07:28:13 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 02:47:32 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/14 06:31:10 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,15 @@ static char	**get_rest(t_data *data, char **lines, int i)
 {
 	char		**map;
 	int			j;
+	char		*trimmed;
 
 	map = ft_calloc(sizeof(char *), data->map->file->lines - i + 1);
 	j = 0;
 	while (lines[i])
 	{
-		map[j] = ft_strdup(lines[i]);
+		ft_replace(lines[i], ' ', '0');
+		trimmed = ft_strtrim(lines[i], " \n");
+		map[j] = trimmed;
 		i++;
 		j++;
 	}

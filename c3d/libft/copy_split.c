@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   copy_split.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 15:45:27 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 06:11:30 by hescoval         ###   ########.fr       */
+/*   Created: 2024/07/14 05:33:08 by hescoval          #+#    #+#             */
+/*   Updated: 2024/07/14 06:11:17 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_in_set(char c, char const *set)
+char	**copy_split(char **src, int height)
 {
-	while (*set)
+	int		i;
+	char	**copy;
+
+	copy = malloc(sizeof(char *) * (height + 1));
+	i = 0;
+	while (src[i])
 	{
-		if (c == *set)
-			return (1);
-		set++;
+		copy[i] = ft_strdup(src[i]);
+		i++;
 	}
-	return (0);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	char	*trim;
-	int		s1_len;
-
-	while (ft_in_set(*s1, set))
-		s1++;
-	s1_len = ft_strlen(s1);
-	if (s1_len - 1 < 0)
-		return (ft_strdup(""));
-	while (ft_in_set(s1[s1_len - 1], set))
-		s1_len--;
-	trim = ft_substr(s1, 0, s1_len);
-	return (trim);
+	copy[i] = NULL;
+	return (copy);
 }

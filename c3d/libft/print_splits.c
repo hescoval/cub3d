@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 20:46:42 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 00:45:15 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/14 05:27:41 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_splits(char **splits)
 	i = 0;
 	while (splits[i])
 	{
-		ft_putendl_fd(splits[i], 1);
+		ft_printf("%s\n", splits[i]);
 		i++;
 	}
 }
