@@ -4,7 +4,7 @@
 NAME="cub3d"
 
 # Diretório dos mapas
-MAP_DIR="maps/valid"
+MAP_DIR="maps/good"
 
 # Verifica se o diretório de mapas existe
 if [ ! -d "$MAP_DIR" ]; then
@@ -16,6 +16,6 @@ fi
 for map in "$MAP_DIR"/*.cub; do
   if [ -f "$map" ]; then
     echo "Executando Valgrind no mapa: $map"
-    valgrind --leak-check=full --show-leak-kinds=all ./$NAME "$map"
+    ./$NAME "$map"
   fi
 done

@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 03:47:43 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 06:09:18 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/14 06:38:05 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ typedef struct s_map
 	char		p_direction;
 	int			rows;
 	int			columns;
-	int			start_map;
-	int			n_textures;
 	t_rawlines	*raw_lines;
 	t_file		*file;
 	t_textures	*textures;
