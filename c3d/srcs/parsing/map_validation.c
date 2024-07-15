@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 19:59:34 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 06:31:31 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/15 01:56:49 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,24 +85,3 @@ void	validate_map_info(t_data *data, char **map)
 	flood_fill(data, copy, data->map->p_position[X], data->map->p_position[Y]);
 	free_splits(copy);
 }
-
-/*
-typedef struct s_map
-{
-	char		*north;
-	char		*south;
-	char		*east;
-	char		*west;
-	char		**f_map;
-	int			p_position[XY];
-	char		p_direction;
-	int			rows;
-	int			columns;
-	int			start_map;
-	int			n_textures;
-	t_rawlines	*raw_lines;
-	t_file		*file;
-	t_textures	*textures;
-	t_img		*text_imgs;
-}	t_map;
-*/

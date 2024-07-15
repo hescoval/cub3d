@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 01:22:37 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 03:15:03 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/15 06:30:49 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,6 @@ void	set_rgb_values(char **values, t_data *data, int *set_value)
 	*set_value = byte_value;
 }
 
-static void	inc_dup(int *change, char **line, char *new_line)
-{
-	*line = ft_strdup(new_line);
-	(*change)++;
-}
-
 int	complete_ph(t_parsehelp *ph)
 {
 	if (ph->no != 1 || ph->so != 1 || ph->we != 1
@@ -67,6 +61,12 @@ void	increment_ph(t_parsehelp *ph, char *line)
 		ph->throw_error = 1;
 	else
 		ph->map_found = 1;
+}
+
+static void	inc_dup(int *change, char **line, char *new_line)
+{
+	*line = ft_strdup(new_line);
+	(*change)++;
 }
 
 void	increment_ph_fetch(t_data *data, t_parsehelp *ph, char *line)

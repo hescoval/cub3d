@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   safe_exit.c                                        :+:      :+:    :+:   */
+/*   abs_d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 06:29:26 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/15 06:30:16 by hescoval         ###   ########.fr       */
+/*   Created: 2024/07/15 02:45:47 by hescoval          #+#    #+#             */
+/*   Updated: 2024/07/15 02:45:58 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/c3d.h"
+#include "libft.h"
 
-void	exit_program(char *error, t_data *to_free)
+double	abs_d(double n)
 {
-	if (to_free)
-	{
-		if (to_free->conn)
-			clean_close(to_free);
-		free_stuff(to_free);
-	}
-	if (!error)
-		exit (SUCCESS_EXIT);
-	ft_putendl_fd("Error", 2);
-	ft_putendl_fd(error, 2);
-	exit (ERROR_EXIT);
+	if (n < 0)
+		return (-n);
+	return (n);
 }

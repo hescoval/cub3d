@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 01:51:36 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 03:14:47 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/15 05:51:20 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ void	check_map_files(t_data *data)
 	t_rawlines	*rls;
 
 	rls = data->map->raw_lines;
-	open_close_check(data, &data->map->north, rls->no_line);
-	open_close_check(data, &data->map->south, rls->so_line);
-	open_close_check(data, &data->map->west, rls->we_line);
-	open_close_check(data, &data->map->east, rls->ea_line);
+	open_close_check(data, &data->map->n_path, rls->no_line);
+	open_close_check(data, &data->map->s_path, rls->so_line);
+	open_close_check(data, &data->map->w_path, rls->we_line);
+	open_close_check(data, &data->map->e_path, rls->ea_line);
 }
 
 void	check_valid_format(t_data *data, int i)

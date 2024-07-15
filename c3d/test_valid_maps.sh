@@ -4,7 +4,7 @@
 NAME="cub3d"
 
 # Diretório dos mapas
-MAP_DIR="maps/good"
+MAP_DIR="maps/valid"
 
 # Verifica se o diretório de mapas existe
 if [ ! -d "$MAP_DIR" ]; then

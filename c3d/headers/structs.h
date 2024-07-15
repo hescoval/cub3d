@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 03:47:43 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 06:38:05 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/15 05:50:22 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ typedef struct s_textures
 typedef struct s_img
 {
 	void	*img_ptr;
-	int		bits_per_pixel;
-	int		size_line;
+	int		bitspp;
+	int		line_size;
 	int		endian;
 	int		*data;
 	int		width;
@@ -68,10 +68,10 @@ typedef struct s_img
 
 typedef struct s_map
 {
-	char		*north;
-	char		*south;
-	char		*east;
-	char		*west;
+	char		*n_path;
+	char		*s_path;
+	char		*e_path;
+	char		*w_path;
 	char		**f_map;
 	int			p_position[XY];
 	char		p_direction;
@@ -88,22 +88,17 @@ typedef struct s_player
 	double	pos[XY];
 	double	dir[XY];
 	double	plane[XY];
-	double	speed;
-	double	rotation;
-	int		fov;
 }	t_player;
 
 typedef struct s_screen
 {
-	t_img	*screen;
 	t_img	*north;
 	t_img	*east;
 	t_img	*south;
 	t_img	*west;
+	t_img	*info;
 	int		ceiling;
 	int		floor;
-	int		height;
-	int		width;
 }	t_screen;
 
 typedef struct s_mm

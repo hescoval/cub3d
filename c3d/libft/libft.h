@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:45:55 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/14 05:39:35 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/15 02:46:08 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int		isdigit_str(char *str);
 int		not_in_set(char *set, char c);
 char	*ft_strndup(const char *s1, size_t n);
 char	**copy_split(char **src, int height);
+double	abs_d(double n);
 
 //Bonus
 typedef struct s_list
