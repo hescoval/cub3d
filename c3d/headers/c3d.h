@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 04:58:36 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/15 06:01:13 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/15 06:39:15 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	init_data(t_data **to_free, char *path);
 void	free_stuff(t_data *to_free);
 void	set_player_values(t_data *data);
 void	window_start(t_data *data);
-void	clean_close(t_data *to_free);
+void	clean_window_close(t_data *to_free);
 void	set_screen_info(t_data *data, t_screen *screen);
 
 // Parsing stuff

@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 06:42:40 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/15 06:30:22 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/15 06:39:00 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	free_map_stuff(t_map *map)
 	safe_free(map);
 }
 
-void	clean_close(t_data *to_free)
+void	clean_window_close(t_data *to_free)
 {
 	free_img_struct(to_free, to_free->screen->info);
 	free_img_struct(to_free, to_free->screen->north);

@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 06:29:26 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/15 06:30:16 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/15 06:39:45 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	exit_program(char *error, t_data *to_free)
 	if (to_free)
 	{
 		if (to_free->conn)
-			clean_close(to_free);
+			clean_window_close(to_free);
 		free_stuff(to_free);
 	}
 	if (!error)
