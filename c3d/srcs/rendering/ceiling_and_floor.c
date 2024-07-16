@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   safe_exit.c                                        :+:      :+:    :+:   */
+/*   ceiling_and_floor.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 06:29:26 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 06:04:45 by hescoval         ###   ########.fr       */
+/*   Created: 2024/07/16 07:15:16 by hescoval          #+#    #+#             */
+/*   Updated: 2024/07/16 07:29:34 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/c3d.h"
 
-static void	error_message(char *err)
+static void pixel_put(void	*start_pixel, int desired_color, int pixel_amount)
 {
-	ft_putendl_fd("Error", 2);
-	ft_putendl_fd(err, 2);
-	exit(EXIT_FAILURE);
-}
+	int	i;
+	int	*cast;
 
-void	exit_program(char *error, t_data *to_free)
-{
-	if (to_free)
+	cast = (int *)start_pixel;
+	i = 0;
+	while (i < pixel_amount)
 	{
-		if (to_free->conn)
-			clean_window_close(to_free);
-		free_stuff(to_free);
+		cast[i] = desired_color;
+		i++;
 	}
-	if (!error)
-		exit (EXIT_SUCCESS);
-	error_message(error);
 }
 
-int	window_close(t_data *data)
+void	initial_render(t_data *data)
 {
-	exit_program(NULL, data);
-	return (EXIT_SUCCESS);
+	pixel_put(data->screen->info->pixels, data->screen->ceiling, HALF_SCREEN);
+	pixel_put(&data->screen->info->pixels[HALF_SCREEN], data->screen->floor, HALF_SCREEN);
 }

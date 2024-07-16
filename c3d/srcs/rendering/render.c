@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 05:11:45 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 08:03:03 by hescoval         ###   ########.fr       */
+/*   Created: 2024/07/16 07:09:31 by hescoval          #+#    #+#             */
+/*   Updated: 2024/07/16 11:06:29 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/c3d.h"
+#include "../../headers/c3d.h"
 
-int	main(int ac, char **av)
+int	rendering(t_data *data)
 {
-	t_data	*data;
-
-	if (ac != 2)
-		exit_program("Wrong number of arguments", NULL);
-	init_data(&data, av[1]);
-	parsing_stuff(data);
-	set_player_values(data);
-	window_start(data);
-	set_screen_info(data, data->screen);
-	fetch_textures(data);
-	key_hooks(data);
-	mlx_loop_hook(data->conn, rendering, data);
-	mlx_loop(data->conn);
-	exit_program(NULL, data);
+	initial_render(data);
+	raycasting(data);
+	movement_handle(data);
+	mlx_put_image_to_window(data->conn, data->win, data->screen->info->img_ptr, 0, 0);
+	return (0);
 }

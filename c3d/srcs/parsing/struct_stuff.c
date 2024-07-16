@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 01:22:37 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/15 06:30:49 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/16 07:59:45 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	set_rgb_values(char **values, t_data *data, int *set_value)
 	int	value;
 	int	byte_value;
 
+	byte_value = 0;
 	i = 1;
+
 	while (values[i])
 	{
 		value = ft_atoi(values[i]);
@@ -27,9 +29,7 @@ void	set_rgb_values(char **values, t_data *data, int *set_value)
 			free_splits(values);
 			exit_program("Invalid RGB values", data);
 		}
-		byte_value += value;
-		if (i < 2)
-			byte_value = byte_value << 8;
+		byte_value = (byte_value << 8) | value;
 		i++;
 	}
 	*set_value = byte_value;

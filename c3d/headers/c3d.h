@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 04:58:36 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/15 06:39:15 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/16 11:16:29 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include <string.h>
 # include <unistd.h>
 # include "../minilibx-linux/mlx.h"
+
+# include <X11/keysym.h>
+# include <X11/X.h>
 
 # include "../libft/libft.h"
 # include "defines.h"
@@ -48,5 +51,28 @@ void	pad_map(t_data *data, char **map);
 
 //Texture loading
 void	fetch_textures(t_data *data);
+
+//Movement Related Functions
+void	key_hooks(t_data *data);
+
+//Window Related Functions
+
+int		window_close(t_data *data);
+
+// Rendering
+
+void	initial_render(t_data *data);
+int		rendering(t_data *data);
+void	draw_setup(t_data *data , t_ray *ray, int ray_x);
+
+// Raycasting
+
+void	raycasting(t_data *data);
+void	dda(t_ray *ray, t_map *map);
+
+//Movement
+
+void movement_handle(t_data *data);
+
 
 #endif

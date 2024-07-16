@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 03:47:43 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/15 05:50:22 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/16 09:11:03 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct s_img
 	int		bitspp;
 	int		line_size;
 	int		endian;
-	int		*data;
+	int		*pixels;
 	int		width;
 	int		height;
 }	t_img;
@@ -88,6 +88,8 @@ typedef struct s_player
 	double	pos[XY];
 	double	dir[XY];
 	double	plane[XY];
+	int		move[XY];
+	int		rotate;
 }	t_player;
 
 typedef struct s_screen
@@ -116,22 +118,17 @@ typedef struct s_ray
 	double	plane[XY];
 	double	ray_dir[XY];
 	int		tile[XY];
-	double	delta_distance[XY];
-	double	side_distance[XY];
+	double	delta_dist[XY];
+	double	side_dist[XY];
 	double	step[XY];
-	double	perp_wall_distance;
+	double	perp_wall_dist;
 	double	camera_x;
 	double	wall_x;
-	int		hit;
+	int		line_height;
+	int		draw_start;
+	int		draw_end;
 	int		side;
 }	t_ray;
-
-typedef struct s_rayc
-{
-	t_ray	ray;
-	double	time;
-	double	old_time;
-}	t_rayc;
 
 typedef struct s_data
 {
@@ -141,7 +138,7 @@ typedef struct s_data
 	t_map		*map;
 	t_player	*player;
 	t_mm		*mm;
-	t_rayc		*rayc;
+	t_ray		*ray;
 }	t_data;
 
 #endif

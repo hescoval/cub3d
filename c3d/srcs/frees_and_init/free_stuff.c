@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 06:42:40 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/15 20:16:00 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/16 08:22:40 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	free_stuff(t_data *to_free)
 	free_map_stuff(to_free->map);
 	safe_free(to_free->player);
 	safe_free(to_free->mm);
-	safe_free(to_free->rayc);
 	safe_free(to_free->screen);
+	safe_free(to_free->ray);
 	safe_free(to_free);
 }
