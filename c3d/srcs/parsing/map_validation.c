@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 19:59:34 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 11:03:11 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/16 23:16:43 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ static void	find_player(t_data *data, char **map, int i, int j)
 			{
 				if (data->map->p_position[X] != 0)
 					exit_program("Multiple players in map", data);
-				data->map->p_position[X] = j;
-				data->map->p_position[Y] = i;
+				data->map->p_position[X] = i;
+				data->map->p_position[Y] = j;
 				data->map->p_direction = map[i][j];
 				map[i][j] = '0';
 			}
@@ -82,6 +82,6 @@ void	validate_map_info(t_data *data, char **map)
 	find_player(data, map, 0, 0);
 	pad_map(data, map);
 	copy = copy_split(map, data->map->rows);
-	flood_fill(data, copy, data->map->p_position[X], data->map->p_position[Y]);
+	flood_fill(data, copy, data->map->p_position[Y], data->map->p_position[X]);
 	free_splits(copy);
 }

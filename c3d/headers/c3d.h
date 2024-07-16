@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 04:58:36 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 11:16:29 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/16 23:23:15 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,8 @@ int		window_close(t_data *data);
 
 // Rendering
 
-void	initial_render(t_data *data);
 int		rendering(t_data *data);
-void	draw_setup(t_data *data , t_ray *ray, int ray_x);
+void	draw_setup(t_data *data, t_ray *ray, int ray_x);
 
 // Raycasting
 
@@ -72,7 +71,8 @@ void	dda(t_ray *ray, t_map *map);
 
 //Movement
 
-void movement_handle(t_data *data);
-
+void	movement_handle(t_data *data);
+int		rotate_right(t_data *data);
+int		rotate_left(t_data *data);
 
 #endif

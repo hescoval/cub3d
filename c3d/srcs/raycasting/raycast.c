@@ -6,18 +6,18 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 08:16:53 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 11:04:28 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/16 23:32:02 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/c3d.h"
 
-static void transfer_coords(t_ray *ray, t_player *player)
+static void	transfer_coords(t_ray *ray, t_player *player)
 {
 	ray->dir[X] = player->dir[X];
 	ray->dir[Y] = player->dir[Y];
-	ray->pos[X] = player->pos[Y];
-	ray->pos[Y] = player->pos[X];
+	ray->pos[X] = player->pos[X];
+	ray->pos[Y] = player->pos[Y];
 	ray->plane[X] = player->plane[X];
 	ray->plane[Y] = player->plane[Y];
 }
@@ -39,19 +39,13 @@ static void	step_and_sidedist(t_ray *ray, int axis)
 	}
 }
 
-static void setup_ray(t_ray *ray, int ray_x)
+static void	setup_ray(t_ray *ray, int ray_x)
 {
 	ray->camera_x = 2 * ray_x / (double)WIN_W - 1;
 	ray->ray_dir[X] = ray->dir[X] + ray->plane[X] * ray->camera_x;
 	ray->ray_dir[Y] = ray->dir[Y] + ray->plane[Y] * ray->camera_x;
-	if (ray->ray_dir[X] == 0)
-		ray->delta_dist[X] = 1e30;
-	else
-		ray->delta_dist[X] = fabs(1 / ray->ray_dir[X]);
-	if (ray->ray_dir[Y] == 0)
-		ray->delta_dist[Y] = 1e30;
-	else
-		ray->delta_dist[Y] = fabs(1 / ray->ray_dir[Y]);
+	ray->delta_dist[X] = fabs(1 / ray->ray_dir[X]);
+	ray->delta_dist[Y] = fabs(1 / ray->ray_dir[Y]);
 	step_and_sidedist(ray, X);
 	step_and_sidedist(ray, Y);
 }

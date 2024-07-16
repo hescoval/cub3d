@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 04:26:25 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 11:18:53 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/16 23:19:29 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ void	key_hooks(t_data *data)
 {
 	mlx_hook(data->win, KeyPress, KeyPressMask, key_press, data);
 	mlx_hook(data->win, KeyRelease, KeyReleaseMask, key_release, data);
-	mlx_hook(data->win, WindowClose, WindowCloseMask, window_close, data);
+	mlx_hook(data->win, WINDOWCLOSE, WINDOWCLOSEMASK, window_close, data);
 }
