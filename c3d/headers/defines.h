@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 03:00:16 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/18 10:20:47 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/18 21:24:38 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 # define MINIMAP_SIZE 5
 
 // Window settings
-# define WIN_H 500
-# define WIN_W 500
+# define WIN_H 768
+# define WIN_W 1024
 # define WIN_NAME "Wolfenstein Wannabe"
 
 // Player settings
