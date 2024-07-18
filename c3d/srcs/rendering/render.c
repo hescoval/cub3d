@@ -6,13 +6,13 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 07:09:31 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 23:27:32 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/18 10:30:37 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/c3d.h"
 
-static void	pixel_put(void	*start_pixel, int desired_color, int pixel_amount)
+void	pixel_put(void	*start_pixel, int desired_color, int pixel_amount)
 {
 	int	i;
 	int	*cast;
@@ -46,6 +46,7 @@ int	rendering(t_data *data)
 		data->screen->info->img_ptr,
 		0,
 		0);
+	minimap(data);
 	movement_handle(data);
 	return (0);
 }

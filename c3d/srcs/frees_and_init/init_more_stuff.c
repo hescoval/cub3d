@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 05:53:42 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 07:05:40 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/18 07:39:46 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,17 @@ void	fetch_textures(t_data *data)
 	data->screen->south = safe_load(data, data->map->s_path);
 	data->screen->east = safe_load(data, data->map->e_path);
 	data->screen->west = safe_load(data, data->map->w_path);
+}
+
+void	init_mm_info(t_data *data, t_mm *mm)
+{
+	mm->floor = ft_calloc(1, sizeof(t_img));
+	mm->wall = ft_calloc(1, sizeof(t_img));
+	mm->player = ft_calloc(1, sizeof(t_img));
+	mm->minimap_pos[X] = WIN_W * 0.75;
+	mm->minimap_pos[Y] = WIN_H * 0.05;
+	mm->block_size = WIN_W * 0.02;
+	make_mm_images(data, mm, mm->floor, FLOOR_COLOR);
+	make_mm_images(data, mm, mm->wall, WALL_COLOR);
+	make_mm_images(data, mm, mm->player, PLAYER_COLOR);
 }

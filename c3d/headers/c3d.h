@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 04:58:36 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 23:23:15 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/18 10:30:45 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	pad_map(t_data *data, char **map);
 
 //Texture loading
 void	fetch_textures(t_data *data);
+void	pixel_put(void	*start_pixel, int desired_color, int pixel_amount);
 
 //Movement Related Functions
 void	key_hooks(t_data *data);
@@ -74,5 +75,11 @@ void	dda(t_ray *ray, t_map *map);
 void	movement_handle(t_data *data);
 int		rotate_right(t_data *data);
 int		rotate_left(t_data *data);
+
+// Minimap
+
+void	minimap(t_data *data);
+void	make_mm_images(t_data *data, t_mm *mm, t_img *target, int color);
+void	init_mm_info(t_data *data, t_mm *mm);
 
 #endif

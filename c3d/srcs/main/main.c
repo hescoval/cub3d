@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 05:11:45 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 08:03:03 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/18 10:17:13 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int ac, char **av)
 	window_start(data);
 	set_screen_info(data, data->screen);
 	fetch_textures(data);
+	init_mm_info(data, data->mm);
 	key_hooks(data);
 	mlx_loop_hook(data->conn, rendering, data);
 	mlx_loop(data->conn);

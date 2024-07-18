@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 06:42:40 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 08:22:40 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/18 10:22:57 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ void	clean_window_close(t_data *to_free)
 	free_img_struct(to_free, to_free->screen->south);
 	free_img_struct(to_free, to_free->screen->east);
 	free_img_struct(to_free, to_free->screen->west);
+	free_img_struct(to_free, to_free->mm->floor);
+	free_img_struct(to_free, to_free->mm->wall);
+	free_img_struct(to_free, to_free->mm->player);
 	mlx_destroy_window(to_free->conn, to_free->win);
 	mlx_destroy_display(to_free->conn);
 	safe_free(to_free->conn);

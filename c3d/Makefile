@@ -2,7 +2,8 @@
 
 INCLUDES = headers
 SRC = srcs
-_SUBFOLDERS = main parsing frees_and_init movement rendering raycasting
+_SUBFOLDERS = main parsing frees_and_init movement rendering raycasting \
+				minimap
 VPATH = $(SRCS) $(addprefix $(SRC)/, $(_SUBFOLDERS))
 OBJ_DIR = objs
 
@@ -11,7 +12,7 @@ OBJ_DIR = objs
 NAME = cub3d
 _FILES = main.c safe_exit.c init_stuff.c free_stuff.c parse_central.c struct_stuff.c \
 			info_error_check.c map_validation.c padding_map.c init_more_stuff.c \
-			key_handler.c render.c raycast.c dda_algorithm.c \
+			key_handler.c render.c raycast.c dda_algorithm.c minimap.c \
 			rendering_help.c move_player.c rotation.c
 OBJS = $(_FILES:%.c=%.o)
 TARGET = $(addprefix $(OBJ_DIR)/, $(OBJS))
@@ -21,7 +22,7 @@ TARGET = $(addprefix $(OBJ_DIR)/, $(OBJS))
 CC = cc
 RM = rm
 
-W = -Wall -Wextra -Werror
+W = -g -Wall -Wextra -Werror
 I = -I $(INCLUDES)
 O = -c
 

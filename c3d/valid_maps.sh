@@ -6,6 +6,11 @@ NAME="cub3d"
 # Diretório dos mapas
 MAP_DIR="maps/valid"
 
+# Cores
+GREEN='\033[1;32m'
+RED='\033[5;31m'
+NC='\033[0m'
+
 # Verifica se o diretório de mapas existe
 if [ ! -d "$MAP_DIR" ]; then
   echo "Diretório $MAP_DIR não encontrado!"

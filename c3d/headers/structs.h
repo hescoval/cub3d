@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 03:47:43 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/16 09:11:03 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/18 06:55:09 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,8 @@ typedef struct s_screen
 
 typedef struct s_mm
 {
-	t_img	*bkg;
+	int		minimap_pos[XY];
+	int		block_size;
 	t_img	*player;
 	t_img	*wall;
 	t_img	*floor;
