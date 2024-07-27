@@ -6,7 +6,7 @@
 /*   By: hescoval <hescoval@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 05:53:42 by hescoval          #+#    #+#             */
-/*   Updated: 2024/07/18 23:23:27 by hescoval         ###   ########.fr       */
+/*   Updated: 2024/07/27 01:55:03 by hescoval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ void	init_mm_info(t_data *data, t_mm *mm)
 {
 	int	block;
 
-	block = mm->block_size;
 	mm->floor = ft_calloc(1, sizeof(t_img));
 	mm->wall = ft_calloc(1, sizeof(t_img));
 	mm->player = ft_calloc(1, sizeof(t_img));
 	mm->minimap_pos[Y] = WIN_H * 0.05;
 	mm->block_size = WIN_W * 0.02;
-	mm->minimap_pos[X] = WIN_W * (1 - 0.05) - (block * MINIMAP_SIZE * 2);
+	block = mm->block_size;
+	mm->minimap_pos[X] = WIN_W * (0.95) - (block * MINIMAP_SIZE * 2);
 	make_mm_images(data, mm, mm->floor, FLOOR_COLOR);
 	make_mm_images(data, mm, mm->wall, WALL_COLOR);
 	make_mm_images(data, mm, mm->player, PLAYER_COLOR);
